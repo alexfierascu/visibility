@@ -11,7 +11,7 @@ public class DriverSetup {
 
     @BeforeClass
     public static void driverSetup() {
-        System.setProperty("webdriver.gecko.driver", "./src/main/resources/windows/geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "./src/main/resources/mac/geckodriver");
         driver = new FirefoxDriver();
         driver.manage().window().maximize();
     }
