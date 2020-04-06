@@ -1,28 +1,41 @@
 package page.object;
 
-import lombok.Data;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
 import static setup.DriverSetup.getDriver;
 
 //page object model design pattern
 public class MainPage {
 
-    private String titluMainPage = "dEpurtat - Cel mai bun raport calitate/pret la incaltaminte de dama";
+
+    private static String titluMainPage = "dEpurtat - Cel mai bun raport calitate/pret la incaltaminte de dama";
     private static WebElement butonPromotii = getDriver().findElement(By.xpath("//*[@id=\"header\"]/div[2]/div/nav/ul/li[2]/a"));
     private static WebElement acceptCookiesButton = getDriver().findElement(By.xpath("/html/body/div[1]/div/div[2]/a"));
     private static WebElement butonNoutati = getDriver().findElement(By.xpath("//*[@id=\"header\"]/div[2]/div/nav/ul/li[2]/a"));
-    private static WebElement butonPantofi = getDriver().findElement(By.xpath("valoare"));
-    private static WebElement butonSport = getDriver().findElement(By.xpath("valoare"));
-    private static WebElement butonUser = getDriver().findElement(By.xpath("//*[@id=\"header\"]/div[1]/div[1]/div/div[1]/a/img"));
+//    private static WebElement butonPantofi = getDriver().findElement(By.xpath("valoare"));
+//    private static WebElement butonSport = getDriver().findElement(By.xpath("valoare"));
+
+    private static WebElement butonAcceptCookies = getDriver().findElement(By.xpath("//*[@id=\"cookie_policy_links\"]/a"));
+
+    private static WebElement butonUser = getDriver().findElement(By.xpath("/html/body/header/div[1]/div[1]/div/div[1]/a/img"));
+
+    private static WebElement butonAccesareCont = getDriver().findElement(By.xpath("/html/body/header/div[1]/div[1]/div/div[1]/div/a[1]"));
 
 
-    //page factory object model
-    @FindBy(xpath = "/html/body/header/div[1]/div[1]/div/div[1]/div/a[1]")
-    private WebElement butonAccesareCont;
+    /*
+    page factory model example
+    @FindBy(id="id_button2")
+    private static WebElement butonLogin;
+    */
 
+    public static WebElement getButonAcceptCookies() {
+        return butonAcceptCookies;
+    }
+
+    public static void setButonAcceptCookies(WebElement butonAcceptCookies) {
+        MainPage.butonAcceptCookies = butonAcceptCookies;
+    }
 
     public static WebElement getButonPromotii() {
         return butonPromotii;
@@ -56,23 +69,23 @@ public class MainPage {
         this.butonNoutati = butonNoutati;
     }
 
-    public WebElement getButonPantofi() {
-        return butonPantofi;
-    }
+//    public WebElement getButonPantofi() {
+//        return butonPantofi;
+//    }
+//
+//    public void setButonPantofi(WebElement butonPantofi) {
+//        this.butonPantofi = butonPantofi;
+//    }
+//
+//    public WebElement getButonSport() {
+//        return butonSport;
+//    }
+//
+//    public void setButonSport(WebElement butonSport) {
+//        this.butonSport = butonSport;
+//    }
 
-    public void setButonPantofi(WebElement butonPantofi) {
-        this.butonPantofi = butonPantofi;
-    }
-
-    public WebElement getButonSport() {
-        return butonSport;
-    }
-
-    public void setButonSport(WebElement butonSport) {
-        this.butonSport = butonSport;
-    }
-
-    public WebElement getButonUser() {
+    public static WebElement getButonUser() {
         return butonUser;
     }
 
