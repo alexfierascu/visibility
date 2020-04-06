@@ -10,10 +10,12 @@ public class TestAdaugaProdusInCos extends DriverSetup {
 
     @Test
     public void checkThatUnregisteredUserCanAddAPromotionProductToCart() {
-
-        getDriver().get("https://www.depurtat.ro/");
         accesarePaginaPromotii();
         checkDetailsForFistProductInPromotionsPage();
+    }
+
+    @Test
+    public void checkCevaTest() {
     }
 
 }
