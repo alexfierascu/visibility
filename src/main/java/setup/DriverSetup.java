@@ -13,6 +13,8 @@ public class DriverSetup {
     public static void driverSetup() {
         String URLWebsiteUnderTest = "https://www.depurtat.ro/";
         System.setProperty("webdriver.gecko.driver", "./src/main/resources/mac/geckodriver");
+        System.setProperty("webdriver.gecko.driver", "src/main/resources/windows/geckodriver.exe");
+
         driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.get(URLWebsiteUnderTest);
