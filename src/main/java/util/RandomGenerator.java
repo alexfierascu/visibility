@@ -24,4 +24,8 @@ public class RandomGenerator {
     public void generateRandomEmailAddress() {
 
     }
+
+    private RandomGenerator() {
+
+    }
 }

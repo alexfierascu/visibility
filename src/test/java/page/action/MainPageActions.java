@@ -5,12 +5,17 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import page.object.MainPage;
 
-import static setup.DriverSetup.getDriver;
+import static setup.DriverSetup.*;
 
 public class MainPageActions extends MainPage {
 
     public static void accesarePaginaPromotii() {
         getButonPromotii().click();
+    }
+
+    public static void navigateToWebsite() {
+        getDriver().navigate().to(getURLWebsiteUnderTest());
+
     }
 
     public static void navigateToAccesCont() {

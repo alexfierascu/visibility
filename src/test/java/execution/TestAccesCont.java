@@ -14,12 +14,12 @@ public class TestAccesCont extends DriverSetup {
 
     @Test
     public void acceptCookies() {
+
         acceptCookiesIfPosible();
         Assert.assertTrue(getButonAcceptCookies().isDisplayed());
     }
     @Test
     public void navigarePaginaAccesCont(){
-
         System.out.println("navigare catre pagina de acces cont");
         navigateToAccesCont();
         System.out.println("Navigare realizata cu succes");
@@ -37,7 +37,6 @@ public class TestAccesCont extends DriverSetup {
 
     @Test
     public void loginRegisteredUser() {
-
         navigateToAccesCont();
         //trimitem user si parola ca variabile de environment -- notiune foarte avansata
         //lucrul asta nu se face din cod, ci din CI&CD pipeline tools (Jenkins)

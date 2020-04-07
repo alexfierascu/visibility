@@ -8,10 +8,11 @@ import org.testng.annotations.BeforeClass;
 
 public class DriverSetup {
     private static WebDriver driver;
+    private static String URLWebsiteUnderTest = "https://www.depurtat.ro/";
 
     @BeforeClass
     public static void driverSetup() {
-        String URLWebsiteUnderTest = "https://www.depurtat.ro/";
+
         System.setProperty("webdriver.gecko.driver", "./src/main/resources/mac/geckodriver");
 
         driver = new FirefoxDriver();
@@ -27,8 +28,17 @@ public class DriverSetup {
         DriverSetup.driver = driver;
     }
 
+    public static String getURLWebsiteUnderTest() {
+        return URLWebsiteUnderTest;
+    }
+
+    public static void setURLWebsiteUnderTest(String URLWebsiteUnderTest) {
+        DriverSetup.URLWebsiteUnderTest = URLWebsiteUnderTest;
+    }
+
     @AfterClass
     public void driverTeardown() {
         driver.quit();
     }
+
 }
