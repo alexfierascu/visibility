@@ -22,12 +22,22 @@ public class MainPage {
 
     private static WebElement butonAccesareCont = getDriver().findElement(By.xpath("/html/body/header/div[1]/div[1]/div/div[1]/div/a[1]"));
 
+    private static WebElement butonInregistrare =getDriver().findElement(By.xpath("//*[@id=\"header\"]/div[1]/div[1]/div/div[1]/div/a[2]"));
+
 
     /*
     page factory model example
     @FindBy(id="id_button2")
     private static WebElement butonLogin;
     */
+
+    public static WebElement getButonInregistrare() {
+        return butonInregistrare;
+    }
+
+    public static void setButonInregistrare(WebElement butonInregistrare) {
+        MainPage.butonInregistrare = butonInregistrare;
+    }
 
     public static WebElement getButonAcceptCookies() {
         return butonAcceptCookies;

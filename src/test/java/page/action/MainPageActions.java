@@ -23,6 +23,12 @@ public class MainPageActions extends MainPage {
         getDriver().findElement(By.xpath("//*[@id=\"header\"]/div[1]/div[1]/div/div[1]/div/a[1]")).click();
     }
 
+
+    public static void navigateToInregistrarePage() {
+        getButonUser().click();
+        getDriver().findElement(By.xpath("//*[@id=\"header\"]/div[1]/div[1]/div/div[1]/div/a[2]")).click();
+    }
+
     public static void acceptCookiesIfPosible() {
         WebDriverWait wait = new WebDriverWait(getDriver(), 10);
         try {

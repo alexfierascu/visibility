@@ -12,14 +12,18 @@ import static page.object.MyAccountPage.getTitleMyAccountPage;
 public class TestAccesCont extends DriverSetup {
 
 
+    //testele se executa in ordine alfabetica dupa numele testului -- by default (testng functionality)
+    // ca sa schimbam prioritatea in care ruleaza testele ne folosim de proprietatea din testng priority
     @Test
     public void acceptCookies() {
 
         acceptCookiesIfPosible();
         Assert.assertTrue(getButonAcceptCookies().isDisplayed());
     }
-    @Test
+   @Test
     public void navigarePaginaAccesCont(){
+
+
         System.out.println("navigare catre pagina de acces cont");
         navigateToAccesCont();
         System.out.println("Navigare realizata cu succes");
@@ -34,9 +38,10 @@ public class TestAccesCont extends DriverSetup {
     //todo - daca vreti
     }
 
-
     @Test
     public void loginRegisteredUser() {
+
+
         navigateToAccesCont();
         //trimitem user si parola ca variabile de environment -- notiune foarte avansata
         //lucrul asta nu se face din cod, ci din CI&CD pipeline tools (Jenkins)

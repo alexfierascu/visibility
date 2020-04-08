@@ -1,6 +1,7 @@
 package setup;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -13,9 +14,9 @@ public class DriverSetup {
     @BeforeClass
     public static void driverSetup() {
 
-        System.setProperty("webdriver.gecko.driver", "./src/main/resources/mac/geckodriver");
+        System.setProperty("webdriver.chrome.driver", "./src/main/resources/mac/chromedriver");
 
-        driver = new FirefoxDriver();
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(URLWebsiteUnderTest);
     }
@@ -36,9 +37,9 @@ public class DriverSetup {
         DriverSetup.URLWebsiteUnderTest = URLWebsiteUnderTest;
     }
 
-    @AfterClass
-    public void driverTeardown() {
-        driver.quit();
-    }
+//    @AfterClass
+//    public void driverTeardown() {
+//        driver.quit();
+//    }
 
 }
