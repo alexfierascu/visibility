@@ -1,5 +1,6 @@
 package util;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,9 +22,15 @@ public class RandomGenerator {
         Thread.sleep(2000);
     }
 
-    public void generateRandomEmailAddress() {
-
+    public static String generateRandomEmail() {
+        String email = "";
+        String allowedChars = "abcdefghijklmnopqrstuvwxyz" + "1234567890";
+        String fistEmailPart = RandomStringUtils.random(8,allowedChars);
+        email = fistEmailPart + "@yahoo.com";
+        return email;
     }
+
+
 
     private RandomGenerator() {
 

@@ -18,6 +18,16 @@ public class InregistrareContPage {
     private static WebElement butonAcceptareTermeniSiConditii = getDriver().findElement(By.id("confirm_terms_desktop"));
     private static WebElement butonInregistrare = getDriver().findElement(By.xpath("//*[@id=\"user_account_fields\"]/div[10]/button"));
 
+    private static WebElement butonQuickOrder=getDriver().findElement(By.xpath("//*[@id=\"page_signup_form\"]/div/div[2]/p[4]/a"));
+
+    public static WebElement getButonQuickOrder() {
+        return butonQuickOrder;
+    }
+
+    public static void setButonQuickOrder(WebElement butonQuickOrder) {
+        InregistrareContPage.butonQuickOrder = butonQuickOrder;
+    }
+
     public static WebElement getButonInregistrare() {
         return butonInregistrare;
     }

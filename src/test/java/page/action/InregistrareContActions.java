@@ -7,13 +7,16 @@ import org.openqa.selenium.WebElement;
 import page.object.InregistrareContPage;
 
 import static setup.DriverSetup.getDriver;
+import static util.RandomGenerator.generateRandomEmail;
 
 public class InregistrareContActions extends InregistrareContPage {
 
-    public static void fillRegistryDataForNewUser(String email, String numePrenume,
+    public static void fillRegistryDataForNewUser(String numePrenume,
                                                   String oras, String adresa,
                                                   String telefon, String parola) throws InterruptedException {
-        getInputEmail().sendKeys(email);
+
+
+        getInputEmail().sendKeys(generateRandomEmail());
         getInputNumeSiPrenume().sendKeys(numePrenume);
         //Poti pune fallback/workaround daca vrei doar sa arati ca merge, nu si codul
         //Daca nu apare dropdown-ul sa incerci de X ori
@@ -51,5 +54,26 @@ public class InregistrareContActions extends InregistrareContPage {
 
     public static void completeRegistrationAfterNewUserDataEntry() {
         getButonInregistrare().click();
+    }
+
+    public static void makeAQuickOrder() {
+        getButonQuickOrder().click();
+    }
+
+    public static void fillRegistryDataForNewQuickOrder(String numePrenume,
+                                                        String oras, String adresa,
+                                                        String telefon) throws InterruptedException {
+        Thread.sleep(3000);
+        getInputEmail().sendKeys(generateRandomEmail());
+        getInputNumeSiPrenume().sendKeys(numePrenume);
+        //Poti pune fallback/workaround daca vrei doar sa arati ca merge, nu si codul
+        //Daca nu apare dropdown-ul sa incerci de X ori
+        getInputOras().clear();
+        getInputOras().sendKeys(oras);
+        Thread.sleep(2000);
+        WebElement fistCityChoice = getDriver().findElement(By.xpath("//div[contains(@class, 'autocomplete-suggestions')]/span[@data-val]"));
+        fistCityChoice.click();
+        getInputAdresa().sendKeys(adresa);
+        getInputNumarTelefon().sendKeys(telefon);
     }
 }
