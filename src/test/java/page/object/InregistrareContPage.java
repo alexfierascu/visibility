@@ -9,17 +9,14 @@ public class InregistrareContPage {
 
 
     private static String titluPaginaInregistrare = "dEpurtat - Inregistrare";
-    private static WebElement inputEmail=getDriver().findElement(By.id("profile_email"));
-    private static WebElement inputPassword=getDriver().findElement(By.id("profile_password"));
-    private static WebElement inputNumeSiPrenume=getDriver().findElement(By.id("profile_billing_person_name"));
-    private static  WebElement inputOras=getDriver().findElement(By.id("profile_billing_city"));
-    private static WebElement inputAdresa=getDriver().findElement(By.id("profile_billing_address"));
-    private static  WebElement inputNumarTelefon=getDriver().findElement(By.id("profile_billing_phone"));
-
-
-    //private static WebElement butonAcceptareTermeniSiConditii=getDriver().findElement(By.xpath("//*[@id=\"user_account_fields\"]/div[10]/div/div/div/label"));
-    private static WebElement butonAcceptareTermeniSiConditii=getDriver().findElement(By.id("confirm_terms_desktop"));
-    private static WebElement butonInregistrare=getDriver().findElement(By.xpath("//*[@id=\"user_account_fields\"]/div[10]/button"));
+    private static WebElement inputEmail = getDriver().findElement(By.id("profile_email"));
+    private static WebElement inputPassword = getDriver().findElement(By.id("profile_password"));
+    private static WebElement inputNumeSiPrenume = getDriver().findElement(By.id("profile_billing_person_name"));
+    private static WebElement inputOras = getDriver().findElement(By.id("profile_billing_city"));
+    private static WebElement inputAdresa = getDriver().findElement(By.id("profile_billing_address"));
+    private static WebElement inputNumarTelefon = getDriver().findElement(By.id("profile_billing_phone"));
+    private static WebElement butonAcceptareTermeniSiConditii = getDriver().findElement(By.id("confirm_terms_desktop"));
+    private static WebElement butonInregistrare = getDriver().findElement(By.xpath("//*[@id=\"user_account_fields\"]/div[10]/button"));
 
     public static WebElement getButonInregistrare() {
         return butonInregistrare;
